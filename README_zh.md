@@ -18,11 +18,10 @@
 
 ### `BOARD`=`onecloud`
 
-### `BRANCH`={`edge`,`current`}
+### `BRANCH`=`current`
 
 | BRANCH    | 内核版本 | eMMC | HDMI | VPU |
 | :-:       | :-:     | :-:  | :-:  | :-: |
-| `edge`    | `v6.6`  | ✔️¹  | ✔️² | ✔️² |
 | `current` | `v6.1`  | ✔️¹  | ✔️² | ✔️² |
 
 > ¹: 需要补丁

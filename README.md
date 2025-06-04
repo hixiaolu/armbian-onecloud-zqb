@@ -17,11 +17,10 @@ Password: `1234`
 
 ### `BOARD`=`onecloud`
 
-### `BRANCH`={`edge`,`current`}
+### `BRANCH`=`current`
 
 | BRANCH    | KERNEL VERSION | eMMC | HDMI | VPU |
 | :-:       | :-:            | :-:  | :-:  | :-: |
-| `edge`    | `v6.6`         | ✔️¹  | ✔️² | ✔️² |
 | `current` | `v6.1`         | ✔️¹  | ✔️² | ✔️² |
 
 > ¹: Patch required
