@@ -46,9 +46,9 @@ fatload ${bootdev} 0x20800000 boot.scr && autoscr 0x20800000
 
 ## GPIO
 
-There is a missing 44-pins chip on the board (presumably for a WiFi module) which has many pins directly connected to the `SoC`. They are able to be used as `GPIO`.
+There is a reserved SDIO WiFi module on the board which has many pins directly connected to the `SoC`. They are able to be used as `GPIO`.
 
-Please check the `dts` (added by `patch/kernel/meson-{edge,current}/onecloud-0001-add-dts.patch`) for specific definitions.
+Please check the `dts` (added by `patch/kernel/archive/meson-6.12/onecloud-0001-add-dts.patch`) for specific definitions.
 
 NOTE: These pins in the `dts` were measured on `V1.0 board` and have not been verified on the V1.3 board.
 
