@@ -174,12 +174,12 @@ jobs:
           name: debs-${{ matrix.BRANCH }}
           path: output/debs/*
 
-      - name: Upload to release
-         uses: softprops/action-gh-release@v2
-         with:
-           tag_name: ${{ env.TAG }}
-           files: |
-             output/debs/*
+      # - name: Upload to release
+         # uses: softprops/action-gh-release@v2
+         # with:
+           # tag_name: ${{ env.TAG }}
+           # files: |
+             # output/debs/*
 
   build:
   #   name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
@@ -334,5 +334,4 @@ jobs:
           append_body: true
           body_path: Release.md
           files: |
-            output/images/*.xz
-            output/images/sha256sum
+            output/images/*
