@@ -3,7 +3,7 @@
 
 [README](README.md)[中文文档](README_zh.md)
 
-[hzyitc/armbian-onecloud](https://github.com/hzyitc/armbian-onecloud)
+**This project is modified based on hzyitc/armbian online, thank you to hzyitc
 **All modifications have been submitted to [the official repository](https://github.com/armbian/build) and you can directly use the official repository for compilation.**
 
 ## First-time login
@@ -60,4 +60,5 @@ fatload ${bootdev} 0x20800000 boot.scr && autoscr 0x20800000
 [`xdarklight/linux@meson-mx-integration-5.18-20220417`](https://github.com/xdarklight/linux/tree/meson-mx-integration-5.18-20220417)`HDMI`
 
 [`S805_Datasheet V0.8 20150126.pdf`](https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf)
+
 
