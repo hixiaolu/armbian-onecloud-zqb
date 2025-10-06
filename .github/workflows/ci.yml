@@ -333,4 +333,5 @@ jobs:
           tag_name: ${{ env.TAG }}
           append_body: true
           body_path: Release.md
+          files: |
             output/images/*
