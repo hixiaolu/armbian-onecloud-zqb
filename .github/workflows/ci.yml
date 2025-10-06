@@ -182,8 +182,7 @@ jobs:
             output/debs/*
 
   build:
-  #   name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
-    name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}
+    name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
     needs: [ prepare, build-debs ]
     runs-on: ubuntu-22.04
     strategy:
