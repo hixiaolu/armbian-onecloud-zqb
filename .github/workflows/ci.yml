@@ -334,10 +334,3 @@ jobs:
           append_body: true
           body_path: Release.md
             output/images/*
->>>>>>> 1e59198 (Update ci.yml: simplify file patterns)
-=======
-          files: |
-            output/images/*
-=======
-            output/images/*
->>>>>>> 1e59198 (Update ci.yml: simplify file patterns)
