@@ -174,12 +174,12 @@ jobs:
           name: debs-${{ matrix.BRANCH }}
           path: output/debs/*
 
-      # - name: Upload to release
-         # uses: softprops/action-gh-release@v2
-         # with:
-           # tag_name: ${{ env.TAG }}
-           # files: |
-             # output/debs/*
+      - name: Upload to release
+          uses: softprops/action-gh-release@v2
+          with:
+            tag_name: ${{ env.TAG }}
+            files: |
+            output/debs/*
 
   build:
   #   name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
@@ -333,5 +333,11 @@ jobs:
           tag_name: ${{ env.TAG }}
           append_body: true
           body_path: Release.md
+            output/images/*
+>>>>>>> 1e59198 (Update ci.yml: simplify file patterns)
+=======
           files: |
             output/images/*
+=======
+            output/images/*
+>>>>>>> 1e59198 (Update ci.yml: simplify file patterns)
