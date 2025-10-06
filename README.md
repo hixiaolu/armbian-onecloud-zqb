@@ -1,36 +1,35 @@
 # armbian-onecloud
-
 [![build](https://img.shields.io/github/actions/workflow/status/hzyitc/armbian-onecloud/ci.yml)](https://github.com/hzyitc/armbian-onecloud/actions/workflows/ci.yml) [![downloads](https://img.shields.io/github/downloads/hzyitc/armbian-onecloud/total)](https://github.com/hzyitc/armbian-onecloud/releases) [![downloads@latest](https://img.shields.io/github/downloads/hzyitc/armbian-onecloud/latest/total)](https://github.com/hzyitc/armbian-onecloud/releases/latest)
 
 [README](README.md) | [中文文档](README_zh.md)
 
-**所有修改均已提交至[官方仓库](https://github.com/armbian/build)，您可以直接使用[官方仓库](https://github.com/armbian/build)进行编译。**
+**All modifications have been submitted to [the official repository](https://github.com/armbian/build) and you can directly use the official repository for compilation.**
 
-## 第一次登录
+## First-time login
 
-主机名: `onecloud`
+Hostname: `onecloud`
 
-账号:  `root`
+Username: `root`
 
-密码: `1234`
+Password: `1234`
 
-## 编译参数
+## Build parameters
 
 ### `BOARD`=`onecloud`
 
 ### `BRANCH`=`current`
 
-| BRANCH    | 内核版本 | eMMC | HDMI | VPU |
-| :-:       | :-:     | :-:  | :-:  | :-: |
-| `current` | `v6.12` | ✔️¹  | ✔️² | ✔️² |
+| BRANCH    | KERNEL VERSION | eMMC | HDMI | VPU |
+| :-:       | :-:            | :-:  | :-:  | :-: |
+| `current` | `v6.12`        | ✔️¹  | ✔️² | ✔️² |
 
-> ¹: 需要补丁
+> ¹: Patch required
 >
-> ²: 通过补丁支持
+> ²: Support through patching
 
-## 如何从`u-boot`启动？
+## Boot from `u-boot` 
 
-### 从`USB`启动
+### Boot from `USB`
 
 ```
 setenv bootdev "usb 0"
@@ -38,25 +37,25 @@ usb start
 fatload ${bootdev} 0x20800000 boot.scr && autoscr 0x20800000
 ```
 
-### 从`eMMC`启动
+### Boot from `eMMC`
 
 ```
 setenv bootdev "mmc 1"
 fatload ${bootdev} 0x20800000 boot.scr && autoscr 0x20800000
 ```
 
-## `GPIO`
+## GPIO
 
-板子上面有一个预留的SDIO WiFi模块。上面有大量直连`SoC`的引脚，可用作`GPIO`。
+There is a reserved SDIO WiFi module on the board which has many pins directly connected to the `SoC`. They are able to be used as `GPIO`.
 
-具体定义参见`dts`(由 `patch/kernel/archive/meson-6.12/onecloud-0001-add-dts.patch` 添加)
+Please check the `dts` (added by `patch/kernel/archive/meson-6.12/onecloud-0001-add-dts.patch`) for specific definitions.
 
-注：`dts`中的引脚是在`V1.0的板子`上测量出来的，未在`V1.3的板子`上面验证。
+NOTE: These pins in the `dts` were measured on `V1.0 board` and have not been verified on the V1.3 board.
 
-## 相关链接
+## Related link
 
-[`armbian/build`](https://github.com/armbian/build) - Armbian官方仓库
+[`armbian/build`](https://github.com/armbian/build) - Armbian official repository
 
-[`xdarklight/linux@meson-mx-integration-5.18-20220516`](https://github.com/xdarklight/linux/commits/meson-mx-integration-5.18-20220516) - `HDMI`补丁源码
+[`xdarklight/linux@meson-mx-integration-5.18-20220417`](https://github.com/xdarklight/linux/tree/meson-mx-integration-5.18-20220417) - the source code of `HDMI` patch
 
-[`S805_Datasheet V0.8 20150126.pdf`](https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf) - S805数据手册
+[`S805_Datasheet V0.8 20150126.pdf`](https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf) - S805 datasheet
