@@ -325,8 +325,32 @@ EOF
           name: debs-${{ matrix.BRANCH }}
           path: output/debs/*
 
+      # - name: Upload to release
+          # uses: softprops/action-gh-release@v2
+          # with:
+            # tag_name: ${{ env.TAG }}
+            # files: |
+            # output/debs/*
+
+  build:
+    # name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
+    name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}
+>>>>>>> cf32f7ec8f3b3ec721cf48e1b541a6eefd2a2254
+=======
   build:
     name: Build ZQBPro ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}
+=======
+      # - name: Upload to release
+          # uses: softprops/action-gh-release@v2
+          # with:
+            # tag_name: ${{ env.TAG }}
+            # files: |
+            # output/debs/*
+
+  build:
+    # name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
+    name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}
+>>>>>>> cf32f7ec8f3b3ec721cf48e1b541a6eefd2a2254
     needs: [ prepare, build-debs ]
     runs-on: ubuntu-22.04
     strategy:
@@ -463,5 +487,11 @@ EOF
           tag_name: ${{ env.TAG }}
           append_body: true
           body_path: Release.md
+            output/images/*
+>>>>>>> cf32f7ec8f3b3ec721cf48e1b541a6eefd2a2254
+=======
           files: |
             output/images/*
+=======
+            output/images/*
+>>>>>>> cf32f7ec8f3b3ec721cf48e1b541a6eefd2a2254
